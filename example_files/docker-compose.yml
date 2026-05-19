@@ -1,0 +1,14 @@
+services:
+  sing-box:
+    image: ghcr.io/sagernet/sing-box:latest
+    container_name: sing-box
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    devices:
+      - /dev/net/tun
+    volumes:
+      - ./:/etc/sing-box/
+    command: -D /var/lib/sing-box -C /etc/sing-box/ run
+    restart: unless-stopped

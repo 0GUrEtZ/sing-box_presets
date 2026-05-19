@@ -1,0 +1,16 @@
+# Binaries
+gen
+cmd/gen/gen
+
+# Output files that should probably be ignored if they are generated
+output/
+rulesets/*.srs
+
+# OS files
+.DS_Store
+
+# Go
+vendor/
+*.exe
+*.test
+*.prof
